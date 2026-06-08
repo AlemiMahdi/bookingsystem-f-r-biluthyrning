@@ -1,0 +1,90 @@
+.skip-link{
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000;
+  color: #fff;
+  padding: 8px 16px;
+  text-decoration: none;
+  z-index: 10000;
+  font-weight: 600;
+}
+
+.skip-link:focus{
+  top: 0;
+}
+
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid #d4af37;
+  outline-offset: 2px;
+}
+
+/* Högkontrast-läge för bättre läsbarhet (WCAG AAA) */
+@media (prefers-contrast: high) {
+  :root {
+    --clr-text: #000;
+    --clr-bg: #fff;
+  }
+}
+
+/* Reducerad rörelse för användare som föredrar det */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Säkerställ minst 4.5:1 kontrast på alla knappar */
+.btn-primary,
+.btn-book {
+  background-color: #1a5f7a; /* Mörkare blå för bättre kontrast */
+  color: #ffffff;
+}
+
+.btn-primary:hover,
+.btn-book:hover {
+  background-color: #0d3d52;    
+}
+/* Error-meddelanden med högre kontrast */
+.login-error {
+  background-color: #d32f2f;
+  color: #ffffff;
+  border: 2px solid #b71c1c;
+} 
+
+/* Screen reader-endast text (WCAG AAA) */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Säkerställ 7:1 kontrast för login-sida (WCAG AAA) */
+.login-overlay {
+  background-color: #000000; /* Svart bakgrund */
+}
+
+.login-card {
+  background-color: #ffffff; /* Vit bakgrund */
+  color: #000000; /* Svart text = perfekt kontrast */
+}
+
+.login-card h2 {
+  color: #000000; /* 21:1 kontrast */
+}
+
+.login-desc {
+  color: #333333; /* 12.6:1 kontrast */
+}

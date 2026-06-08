@@ -1,0 +1,292 @@
+/* ═══════════════════════════════════════════
+   STYLEGUIDE.CSS - Layout för styleguide-sidan
+   Projektets riktiga stilar kommer från ../css/main.css
+═══════════════════════════════════════════ */
+
+/* ─── HEADER ─────────────────────────── */
+.sg-header {
+  background: var(--clr-primary);
+  padding: 48px 64px;
+  position: relative;
+  overflow: hidden;
+}
+
+.sg-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(to right, transparent, var(--clr-accent), var(--clr-accent-light), var(--clr-accent), transparent);
+}
+
+.sg-header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.sg-logo {
+  font-family: var(--font-display);
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--clr-white);
+}
+
+.sg-logo span {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  letter-spacing: 0.4em;
+  color: var(--clr-accent);
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+.sg-header-meta {
+  margin-top: 24px;
+  color: rgba(240,235,224,0.7);
+  font-size: 0.88rem;
+}
+
+.sg-header-meta strong { color: var(--clr-accent); }
+
+/* ─── BODY & SEKTIONER ─────────────────────────── */
+.sg-body {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 56px 64px;
+}
+
+.sg-section {
+  margin-bottom: 72px;
+}
+
+.sg-section-title {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--clr-primary);
+  padding-bottom: 12px;
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.sg-section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(to right, var(--clr-accent), transparent);
+}
+
+.sg-section-desc {
+  font-size: 0.88rem;
+  color: var(--clr-text-muted);
+  margin-bottom: 24px;
+  margin-top: 8px;
+}
+
+.sg-section-desc code {
+  background: var(--clr-light);
+  padding: 1px 6px;
+  border-radius: 3px;
+  font-size: 0.75rem;
+  color: var(--clr-primary);
+  border: 1px solid var(--clr-border);
+}
+
+/* ─── FÄRGPALETT ─────────────────────────── */
+.sg-color-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 16px;
+}
+
+.sg-color-swatch {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--clr-border);
+}
+
+.sg-color-block { height: 80px; }
+
+.sg-color-info {
+  background: var(--clr-white);
+  padding: 10px 12px;
+}
+
+.sg-color-name {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--clr-text);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.sg-color-var,
+.sg-color-hex {
+  font-size: 0.7rem;
+  color: var(--clr-text-muted);
+  font-family: monospace;
+  margin-top: 2px;
+}
+
+/* ─── TYPOGRAFI ─────────────────────────── */
+.sg-type-row {
+  background: var(--clr-white);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-md);
+  padding: 24px 28px;
+  margin-bottom: 12px;
+  display: grid;
+  grid-template-columns: 1fr 200px;
+  align-items: center;
+  gap: 24px;
+}
+
+.sg-type-meta {
+  font-size: 0.75rem;
+  color: var(--clr-text-muted);
+  line-height: 1.8;
+}
+
+.sg-type-meta code {
+  background: var(--clr-light);
+  padding: 1px 6px;
+  border-radius: 3px;
+  font-size: 0.7rem;
+  color: var(--clr-primary);
+}
+
+/* ─── KOMPONENT-DEMO WRAPPERS ─────────────────────────── */
+.sg-demo-box {
+  background: var(--clr-white);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-md);
+  padding: 28px;
+}
+
+.sg-btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: flex-end;
+}
+
+.sg-btn-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.sg-item-label {
+  font-size: 0.68rem;
+  color: var(--clr-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-family: monospace;
+}
+
+/* ─── LAYOUT VISUALISERING ─────────────────────────── */
+.sg-layout-vis {
+  display: flex;
+  gap: 8px;
+  height: 120px;
+  border: 1px dashed var(--clr-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.sg-layout-nav {
+  flex: 0 0 10%;
+  background: var(--clr-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--clr-accent);
+  font-size: 0.65rem;
+  text-align: center;
+}
+
+.sg-layout-main {
+  flex: 1;
+  background: var(--clr-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--clr-text-muted);
+  font-size: 0.75rem;
+}
+
+.sg-layout-promo {
+  flex: 0 0 10%;
+  background: var(--clr-white);
+  border-left: 1px solid var(--clr-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--clr-text-muted);
+  font-size: 0.65rem;
+  text-align: center;
+}
+
+/* ─── SHADOW DEMO ─────────────────────────── */
+.sg-shadow-row {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding: 20px 0;
+}
+
+.sg-shadow-item {
+  background: var(--clr-white);
+  border-radius: var(--radius-md);
+  padding: 24px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  min-width: 140px;
+}
+
+/* ─── WCAG GRID ─────────────────────────── */
+.sg-wcag-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.sg-wcag-grid ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.sg-wcag-grid li {
+  font-size: 0.85rem;
+  color: var(--clr-text);
+}
+
+/* ─── FOOTER ─────────────────────────── */
+.sg-footer {
+  background: var(--clr-primary);
+  color: rgba(240,235,224,0.6);
+  text-align: center;
+  padding: 28px;
+  font-size: 0.82rem;
+}
+
+.sg-footer strong { color: var(--clr-accent); }
+
+/* ─── RESPONSIVE ─────────────────────────── */
+@media (max-width: 768px) {
+  .sg-header { padding: 32px 24px; }
+  .sg-body { padding: 32px 24px; }
+  .sg-type-row { grid-template-columns: 1fr; }
+  .sg-wcag-grid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wigell Car Rental – Styleguide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <!-- Projektets riktiga CSS -->
+  <link rel="stylesheet" href="../css/main.css" />
+  <!-- Styleguide-specifik layout -->
+  <link rel="stylesheet" href="styleguide.css" />
+</head>
+<body>
+
+  <!-- ═══════════════ HEADER ═══════════════ -->
+  <header class="sg-header">
+    <div class="sg-header-inner">
+      <div class="sg-logo">
+        WIGELL
+        <span>CAR RENTAL</span>
+      </div>
+      <p class="sg-header-meta">
+        <strong>Styleguide</strong> &nbsp;·&nbsp;
+        Version 1.0 &nbsp;·&nbsp;
+        Wigellkoncernen Frontend &nbsp;·&nbsp;
+        Typsnitt: Cormorant Garamond + Jost
+      </p>
+    </div>
+  </header>
+
+  <div class="sg-body">
+
+    <!-- ═══════════════ 1. FÄRGPALETT ═══════════════ -->
+    <section class="sg-section">
+      <h2 class="sg-section-title">1. Färgpalett</h2>
+      <p class="sg-section-desc">Alla färger definieras som CSS-variabler i <code>:root</code> i <code>css/variables.css</code> och ska alltid refereras via variabelnamn, aldrig hårdkodade hex-värden.</p>
+
+      <div class="sg-color-grid">
+        <div class="sg-color-swatch">
+          <div class="sg-color-block" style="background:#1a3a2a;"></div>
+          <div class="sg-color-info">
+            <div class="sg-color-name">Primary</div>
+            <div class="sg-color-var">--clr-primary</div>
+            <div class="sg-color-hex">#1a3a2a</div>
+          </div>
+        </div>
+        <div class="sg-color-swatch">
+          <div class="sg-color-block" style="background:#0f2318;"></div>
+          <div class="sg-color-info">
+            <div class="sg-color-name">Primary Dark</div>
+            <div class="sg-color-var">--clr-primary-dark</div>
+            <div class="sg-color-hex">#0f2318</div>
+          </div>
+        </div>
+        <div class="sg-color-swatch">
+          <div class="sg-color-block" style="background:#2d5c3f;"></div>
+          <div class="sg-color-info">
+            <div class="sg-color-name">Primary Mid</div>
+            <div class="sg-color-var">--clr-primary-mid</div>
+            <div class="sg-color-hex">#2d5c3f</div>
+          </div>
+        </div>
+        <div class="sg-color-swatch">
+          <div class="sg-color-block" style="background:#c9a84c;"></div>
+          <div class="sg-color-info">
+            <div class="sg-color-name">Accent</div>
+            <div class="sg-color-var">--clr-accent</div>
+            <div class="sg-color-hex">#c9a84c</div>
+          </div>
+        </div>
+        <div class="sg-color-swatch">
+          <div class="sg-color-block" style="background:#e8c96a;"></div>
+          <div class="sg-color-info">
+            <div class="sg-color-name">Accent Light</div>
+            <div class="sg-color-var">--clr-accent-light</div>
+            <div class="sg-color-hex">#e8c96a</div>
+          </div>
+        </div>
+        <div class="sg-color-swatch">
+          <div class="sg-color-block" style="background:#f5edcf;"></div>
+          <div class="sg-color-info">
+            <div class="sg-color-name">Accent Pale</div>
+            <div class="sg-color-var">--clr-accent-pale</div>
+            <div class="sg-color-hex">#f5edcf</div>
+          </div>
+        </div>
+        <div class="sg-color-swatch">
+          <div class="sg-color-block" style="background:#f0ebe0; border-bottom:1px solid #d4c9a8;"></div>
+          <div class="sg-color-info">
+            <div class="sg-color-name">Light (Bakgrund)</div>
+            <div class="sg-color-var">--clr-light</div>
+            <div class="sg-color-hex">#f0ebe0</div>
+          </div>
+        </div>
+        <div class="sg-color-swatch">
+          <div class="sg-color-block" style="background:#ffffff; border-bottom:1px solid #d4c9a8;"></div>
+          <div class="sg-color-info">
+            <div class="sg-color-name">White</div>
+            <div class="sg-color-var">--clr-white</div>
+            <div class="sg-color-hex">#ffffff</div>
+          </div>
+        </div>
+        <div class="sg-color-swatch">
+          <div class="sg-color-block" style="background:#1a1a1a;"></div>
+          <div class="sg-color-info">
+            <div class="sg-color-name">Text</div>
+            <div class="sg-color-var">--clr-text</div>
+            <div class="sg-color-hex">#1a1a1a</div>
+          </div>
+        </div>
+        <div class="sg-color-swatch">
+          <div class="sg-color-block" style="background:#5a6a60;"></div>
+          <div class="sg-color-info">
+            <div class="sg-color-name">Text Muted</div>
+            <div class="sg-color-var">--clr-text-muted</div>
+            <div class="sg-color-hex">#5a6a60</div>
+          </div>
+        </div>
+        <div class="sg-color-swatch">
+          <div class="sg-color-block" style="background:#8b2635;"></div>
+          <div class="sg-color-info">
+            <div class="sg-color-name">Error</div>
+            <div class="sg-color-var">--clr-error</div>
+            <div class="sg-color-hex">#8b2635</div>
+          </div>
+        </div>
+        <div class="sg-color-swatch">
+          <div class="sg-color-block" style="background:#2d6a3f;"></div>
+          <div class="sg-color-info">
+            <div class="sg-color-name">Success</div>
+            <div class="sg-color-var">--clr-success</div>
+            <div class="sg-color-hex">#2d6a3f</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ 2. TYPOGRAFI ═══════════════ -->
+    <section class="sg-section">
+      <h2 class="sg-section-title">2. Typografi</h2>
+      <p class="sg-section-desc">Två typsnitt används genomgående. <code>--font-display</code> för rubriker och logotyp, <code>--font-body</code> för all övrig text.</p>
+
+      <div class="sg-type-row">
+        <div>
+          <div style="font-family:'Cormorant Garamond',Georgia,serif; font-size:2.4rem; font-weight:700; color:var(--clr-primary); letter-spacing:0.04em;">Cormorant Garamond</div>
+          <div style="font-family:'Cormorant Garamond',Georgia,serif; font-size:1.1rem; color:var(--clr-text-muted); margin-top:4px;">Aa Bb Cc Dd Ee Ff 0123456789</div>
+        </div>
+        <div class="sg-type-meta">
+          <div><code>--font-display</code></div>
+          <div>Rubrik, logotyp, priser</div>
+          <div>Vikter: 400, 600, 700</div>
+        </div>
+      </div>
+
+      <div class="sg-type-row">
+        <div>
+          <div style="font-family:'Jost',sans-serif; font-size:2rem; font-weight:600; color:var(--clr-primary);">Jost</div>
+          <div style="font-family:'Jost',sans-serif; font-size:1rem; color:var(--clr-text-muted); margin-top:4px;">Aa Bb Cc Dd Ee Ff 0123456789</div>
+        </div>
+        <div class="sg-type-meta">
+          <div><code>--font-body</code></div>
+          <div>Brödtext, knappar, labels</div>
+          <div>Vikter: 300, 400, 500, 600</div>
+        </div>
+      </div>
+
+      <div class="sg-demo-box" style="margin-top:12px;">
+        <div class="view-title" style="margin-bottom:8px;">Sidtitel — view-title</div>
+        <div class="view-subtitle">Undertitel / beskrivning — view-subtitle</div>
+        <div style="margin-top:16px; font-size:15px; color:var(--clr-text);">Brödtext — Jost 15px / 400. Välj en bil och boka din resa med Wigell Car Rental.</div>
+        <div style="margin-top:8px;" class="form-group"><label style="display:inline;">Label — 0.8rem / 600 / UPPERCASE</label></div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ 3. KNAPPAR ═══════════════ -->
+    <section class="sg-section">
+      <h2 class="sg-section-title">3. Knappar</h2>
+      <p class="sg-section-desc">Knappar ska alltid använda rätt CSS-klass för sin kontext. Alla har hover-effekter definierade i <code>css/components.css</code>.</p>
+
+      <div class="sg-demo-box">
+        <div class="sg-btn-row">
+          <div class="sg-btn-item">
+            <button class="btn-primary" style="width:auto; padding:10px 24px; margin-top:0;">Logga in</button>
+            <span class="sg-item-label">.btn-primary</span>
+          </div>
+          <div class="sg-btn-item">
+            <button class="btn-book">Boka nu</button>
+            <span class="sg-item-label">.btn-book</span>
+          </div>
+          <div class="sg-btn-item">
+            <button class="btn-add">+ Lägg till bil</button>
+            <span class="sg-item-label">.btn-add</span>
+          </div>
+          <div class="sg-btn-item">
+            <button class="btn-edit">Redigera</button>
+            <span class="sg-item-label">.btn-edit</span>
+          </div>
+          <div class="sg-btn-item">
+            <button class="btn-delete">Ta bort</button>
+            <span class="sg-item-label">.btn-delete</span>
+          </div>
+          <div class="sg-btn-item">
+            <button class="btn-sm">Returnera bil</button>
+            <span class="sg-item-label">.btn-sm</span>
+          </div>
+          <div class="sg-btn-item">
+            <button class="btn-cancel">Avbryt</button>
+            <span class="sg-item-label">.btn-cancel</span>
+          </div>
+          <div class="sg-btn-item">
+            <button class="btn-logout">Logga ut</button>
+            <span class="sg-item-label">.btn-logout</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ 4. FORMULÄR ═══════════════ -->
+    <section class="sg-section">
+      <h2 class="sg-section-title">4. Formulärelement</h2>
+      <p class="sg-section-desc">Alla fält använder klassen <code>.form-group</code>. Focus-state visas med guldaktig ring definierad i <code>css/layout.css</code>.</p>
+
+      <div class="sg-demo-box" style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+        <div class="form-group">
+          <label for="sg-name">Förnamn</label>
+          <input type="text" id="sg-name" placeholder="t.ex. Anna" />
+        </div>
+        <div class="form-group">
+          <label for="sg-email">E-post</label>
+          <input type="email" id="sg-email" placeholder="din@email.se" />
+        </div>
+        <div class="form-group">
+          <label for="sg-date">Datum</label>
+          <input type="date" id="sg-date" />
+        </div>
+        <div class="form-group">
+          <label for="sg-select">Roll</label>
+          <select id="sg-select">
+            <option>Kund</option>
+            <option>Admin</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ 5. BADGES ═══════════════ -->
+    <section class="sg-section">
+      <h2 class="sg-section-title">5. Badges & Statusmärken</h2>
+      <p class="sg-section-desc">Används i tabeller och bilkort för att visa status. Definierade i <code>css/tables.css</code>.</p>
+
+      <div class="sg-demo-box">
+        <div class="sg-btn-row">
+          <div class="sg-btn-item">
+            <span class="badge badge-active">Aktiv</span>
+            <span class="sg-item-label">.badge-active</span>
+          </div>
+          <div class="sg-btn-item">
+            <span class="badge badge-inactive">Avslutad</span>
+            <span class="sg-item-label">.badge-inactive</span>
+          </div>
+          <div class="sg-btn-item">
+            <span class="badge badge-admin">Admin</span>
+            <span class="sg-item-label">.badge-admin</span>
+          </div>
+          <div class="sg-btn-item">
+            <span class="badge badge-user">Kund</span>
+            <span class="sg-item-label">.badge-user</span>
+          </div>
+          <div class="sg-btn-item">
+            <span class="booked-badge">Bokad</span>
+            <span class="sg-item-label">.booked-badge</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ 6. BILKORT ═══════════════ -->
+    <section class="sg-section">
+      <h2 class="sg-section-title">6. Bilkort</h2>
+      <p class="sg-section-desc">Primärt UI-element på kundvyn. Definierat i <code>css/components.css</code>.</p>
+
+      <div class="cars-grid" style="max-width:540px;">
+        <article class="car-card">
+          <div class="car-card-img" style="font-size:3rem; color:var(--clr-text-muted);">🚗</div>
+          <div class="car-card-body">
+            <div class="car-card-type">Kombi</div>
+            <div class="car-card-name">Volkswagen Buzz</div>
+            <div class="car-card-features">
+              <span class="feature-tag">Retro Design</span>
+              <span class="feature-tag">El-motor</span>
+              <span class="feature-tag">GPS</span>
+            </div>
+          </div>
+          <div class="car-card-footer">
+            <div class="car-price">1 190 <span>kr/dag</span></div>
+            <button class="btn-book">Boka nu</button>
+          </div>
+        </article>
+
+        <article class="car-card">
+          <div class="car-card-img" style="font-size:3rem; color:var(--clr-text-muted);">🚙</div>
+          <div class="car-card-body">
+            <div class="car-card-type">Elektrisk SUV</div>
+            <div class="car-card-name">Skoda Enyaq</div>
+            <div class="car-card-features">
+              <span class="feature-tag">El-motor</span>
+              <span class="feature-tag">Autopilot</span>
+              <span class="feature-tag">Snabbladdning</span>
+            </div>
+          </div>
+          <div class="car-card-footer">
+            <div class="car-price">1 090 <span>kr/dag</span></div>
+            <span class="booked-badge">Bokad</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ═══════════════ 7. TABELLER ═══════════════ -->
+    <section class="sg-section">
+      <h2 class="sg-section-title">7. Tabeller (Admin)</h2>
+      <p class="sg-section-desc">Används i admin-vyerna. Alla kolumner är sorterbara asc/desc. Definierade i <code>css/tables.css</code>.</p>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>ID ⇅</th>
+              <th>Kund</th>
+              <th>Bil-ID</th>
+              <th>Från</th>
+              <th>Till</th>
+              <th>Status</th>
+              <th>Åtgärd</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Anna Svensson</td>
+              <td>5</td>
+              <td>2026-06-01</td>
+              <td>2026-06-07</td>
+              <td><span class="badge badge-active">Aktiv</span></td>
+              <td><div class="td-actions"><button class="btn-edit">Redigera</button><button class="btn-delete">Ta bort</button></div></td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Erik Lindgren</td>
+              <td>8</td>
+              <td>2026-05-10</td>
+              <td>2026-05-14</td>
+              <td><span class="badge badge-inactive">Avslutad</span></td>
+              <td><div class="td-actions"><button class="btn-edit">Redigera</button><button class="btn-delete">Ta bort</button></div></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ═══════════════ 8. FEEDBACK ═══════════════ -->
+    <section class="sg-section">
+      <h2 class="sg-section-title">8. Feedback & Meddelanden</h2>
+      <p class="sg-section-desc">Visas inline i formulär. Definierade i <code>css/layout.css</code>, WCAG-override i <code>css/accessibility.css</code>.</p>
+
+      <div style="display:flex; flex-direction:column; gap:12px;">
+        <div class="login-error" style="display:block;">⚠ Fel användarnamn eller lösenord. — <code>.login-error</code></div>
+        <div class="login-success" style="display:block;">✓ Bokning bekräftad! — <code>.login-success</code></div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ 9. SKUGGOR & RADIER ═══════════════ -->
+    <section class="sg-section">
+      <h2 class="sg-section-title">9. Skuggor & Radier</h2>
+      <p class="sg-section-desc">Tre skuggnivåer och två radiusnivåer används konsekvent. Definierade i <code>css/variables.css</code>.</p>
+
+      <div class="sg-shadow-row">
+        <div class="sg-shadow-item" style="box-shadow:var(--shadow-sm);">
+          <span class="sg-item-label">--shadow-sm</span>
+          <span style="font-size:0.7rem; color:var(--clr-text-muted);">Kort, tabeller</span>
+        </div>
+        <div class="sg-shadow-item" style="box-shadow:var(--shadow-md);">
+          <span class="sg-item-label">--shadow-md</span>
+          <span style="font-size:0.7rem; color:var(--clr-text-muted);">Hover-state</span>
+        </div>
+        <div class="sg-shadow-item" style="box-shadow:var(--shadow-lg);">
+          <span class="sg-item-label">--shadow-lg</span>
+          <span style="font-size:0.7rem; color:var(--clr-text-muted);">Modaler, login</span>
+        </div>
+      </div>
+
+      <div class="sg-demo-box" style="display:flex; gap:24px; align-items:center; flex-wrap:wrap;">
+        <div style="display:flex; flex-direction:column; align-items:center; gap:8px;">
+          <div style="width:80px; height:80px; background:var(--clr-primary); opacity:0.2; border:2px solid var(--clr-primary); border-radius:4px;"></div>
+          <span class="sg-item-label">--radius: 4px<br>Inputs, knappar</span>
+        </div>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:8px;">
+          <div style="width:80px; height:80px; background:var(--clr-primary); opacity:0.2; border:2px solid var(--clr-primary); border-radius:8px;"></div>
+          <span class="sg-item-label">--radius-md: 8px<br>Kort, modaler</span>
+        </div>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:8px;">
+          <div style="width:80px; height:80px; background:var(--clr-accent); opacity:0.4; border:2px solid var(--clr-accent); border-radius:20px;"></div>
+          <span class="sg-item-label">20px<br>Badges, sort-btn</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ 10. TILLGÄNGLIGHET ═══════════════ -->
+    <section class="sg-section">
+      <h2 class="sg-section-title">10. Tillgänglighet (WCAG)</h2>
+      <p class="sg-section-desc">Applikationen uppfyller WCAG AA på alla sidor och WCAG AAA på inloggningssidan. Stilar i <code>css/accessibility.css</code>.</p>
+
+      <div class="sg-demo-box">
+        <div class="sg-wcag-grid">
+          <div>
+            <h4 style="font-family:var(--font-display); font-size:1.1rem; color:var(--clr-primary);">WCAG AA — Alla sidor</h4>
+            <ul>
+              <li>✅ Skip-link för tangentbordsnavigering</li>
+              <li>✅ Fokusindikatorer på alla interaktiva element</li>
+              <li>✅ ARIA-attribut på modal, nav, main</li>
+              <li>✅ ESC-tangent stänger modal</li>
+              <li>✅ role="alert" på felmeddelanden</li>
+              <li>✅ aria-live="polite" på main content</li>
+              <li>✅ Minst 4.5:1 färgkontrast</li>
+            </ul>
+          </div>
+          <div>
+            <h4 style="font-family:var(--font-display); font-size:1.1rem; color:var(--clr-primary);">WCAG AAA — Inloggningssidan</h4>
+            <ul>
+              <li>✅ 7:1 färgkontrast (svart på vit)</li>
+              <li>✅ .sr-only för screen readers</li>
+              <li>✅ aria-required på obligatoriska fält</li>
+              <li>✅ aria-describedby för hjälptext</li>
+              <li>✅ prefers-reduced-motion stöd</li>
+              <li>✅ prefers-contrast: high stöd</li>
+              <li>✅ Fokus sätts automatiskt i modal</li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="margin-top:20px; padding-top:20px; border-top:1px solid var(--clr-border);">
+          <p style="font-size:0.82rem; color:var(--clr-text-muted); margin-bottom:10px;">Fokusindikator — outline: 3px solid #d4af37</p>
+          <button style="outline:3px solid #d4af37; outline-offset:2px;" class="btn-primary" onclick="return false;">Fokuserad knapp</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════ 11. LAYOUT ═══════════════ -->
+    <section class="sg-section">
+      <h2 class="sg-section-title">11. Layout & Spacing</h2>
+      <p class="sg-section-desc">Tre-kolumns flex-layout. Definierad i <code>css/layout.css</code>. Transition: <code>--transition: 0.22s ease</code>.</p>
+
+      <div class="sg-demo-box">
+        <div class="sg-layout-vis">
+          <div class="sg-layout-nav">NAV<br>10%</div>
+          <div class="sg-layout-main">MAIN CONTENT — flex: 1</div>
+          <div class="sg-layout-promo">PROMO<br>10%</div>
+        </div>
+
+        <div style="margin-top:20px; display:grid; grid-template-columns:1fr 1fr; gap:16px; font-size:0.82rem; color:var(--clr-text-muted);">
+          <div>
+            <strong style="color:var(--clr-primary); display:block; margin-bottom:4px;">Header</strong>
+            height: 72px (--header-height)<br>
+            background: --clr-primary<br>
+            Guldlinje: 3px gradient längst ned
+          </div>
+          <div>
+            <strong style="color:var(--clr-primary); display:block; margin-bottom:4px;">Main content padding</strong>
+            Desktop: 32px 28px<br>
+            Mobil (max 600px): 20px 14px
+          </div>
+          <div>
+            <strong style="color:var(--clr-primary); display:block; margin-bottom:4px;">Responsivt</strong>
+            Max 900px: höger sidebar dold<br>
+            Max 600px: nav-text dold
+          </div>
+          <div>
+            <strong style="color:var(--clr-primary); display:block; margin-bottom:4px;">Transition</strong>
+            --transition: 0.22s ease<br>
+            Används på hover, focus, animationer
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <footer class="sg-footer">
+    <strong>Wigell Car Rental</strong> &nbsp;·&nbsp; Styleguide v1.0 &nbsp;·&nbsp; Wigellkoncernen Frontend Projektarbete
+  </footer>
+
+</body>
+</html>
