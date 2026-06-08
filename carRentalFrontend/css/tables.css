@@ -179,10 +179,6 @@ tbody td {
   border: 1px solid #b4c8e8;
 }
 
-/* ─── EXPANDERBARA RADER ─────────────────────────────────
-   Standard: knappar och expanderade rader är dolda på stora skärmar.
-   De visas bara under 980px.
-────────────────────────────────────────────────────────── */
 .expand-btn {
   display: none;
 }
@@ -193,10 +189,7 @@ tbody td {
 
 /* ─── TABLET / SMALL DESKTOP ───────────────────────────── */
 @media (max-width: 980px) {
-  /*
-    Använd klassen hide-mobile på de <td> och <th> som ska döljas
-    och flyttas till den expanderade raden.
-  */
+ 
   .hide-mobile {
     display: none;
   }
@@ -227,10 +220,6 @@ tbody td {
     transform: rotate(180deg);
   }
 
-  /*
-    JavaScript ska lägga till klassen show på raden:
-    <tr class="expanded-row show">...</tr>
-  */
   .expanded-row.show {
     display: table-row !important;
   }

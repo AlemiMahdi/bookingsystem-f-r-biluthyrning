@@ -120,10 +120,6 @@ async function renderAdminBookingsView() {
   }
 }
 
-/* ─── EDIT / DELETE ──────────────────────────────────────
-   Även dessa använder event delegation.
-   Då fortsätter Redigera/Ta bort också fungera efter sortering.
-────────────────────────────────────────────────────────── */
 function bindAdminBookingActions(tableId, bookings) {
   const table = document.getElementById(tableId);
   if (!table) return;

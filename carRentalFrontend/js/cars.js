@@ -104,8 +104,6 @@ function renderCarGrid(cars) {
     return;
   }
   grid.innerHTML = cars.map(car => carCardHTML(car)).join('');
-
-  // Bind book buttons
   grid.querySelectorAll('.btn-book[data-car-id]').forEach(btn => {
     btn.addEventListener('click', () => openBookingModal(Number(btn.dataset.carId)));
   });

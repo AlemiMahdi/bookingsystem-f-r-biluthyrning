@@ -144,10 +144,6 @@ async function renderAdminCarsView() {
   }
 }
 
-/* ─── EDIT / DELETE ──────────────────────────────────────
-   Redigera/Ta bort använder också event delegation.
-   Då fortsätter de fungera efter sortering.
-────────────────────────────────────────────────────────── */
 function bindAdminCarActions(tableId, cars) {
   const table = document.getElementById(tableId);
   if (!table) return;

@@ -73,18 +73,18 @@ textarea:focus {
 
 /* Säkerställ 7:1 kontrast för login-sida (WCAG AAA) */
 .login-overlay {
-  background-color: #000000; /* Svart bakgrund */
+  background-color: #000000;
 }
 
 .login-card {
-  background-color: #ffffff; /* Vit bakgrund */
-  color: #000000; /* Svart text = perfekt kontrast */
+  background-color: #ffffff;
+  color: #000000;
 }
 
 .login-card h2 {
-  color: #000000; /* 21:1 kontrast */
+  color: #000000;
 }
 
 .login-desc {
-  color: #333333; /* 12.6:1 kontrast */
+  color: #333333;
 }

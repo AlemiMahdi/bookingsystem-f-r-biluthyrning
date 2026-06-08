@@ -128,10 +128,6 @@ async function renderAdminUsersView() {
   }
 }
 
-/* ─── EDIT / DELETE ──────────────────────────────────────
-   Även Redigera/Ta bort körs via tabellen.
-   Då fungerar knapparna även efter sortering.
-────────────────────────────────────────────────────────── */
 function bindAdminUserActions(tableId, users) {
   const table = document.getElementById(tableId);
   if (!table) return;
@@ -258,12 +254,6 @@ function renderEditUserForm(u) {
       email: document.getElementById('eu-email').value.trim(),
       phone: document.getElementById('eu-phone').value.trim(),
       role: document.getElementById('eu-role').value,
-
-      /*
-        Viktigt:
-        Om lösenordet lämnas tomt skickar vi session.password.
-        Det är samma mönster som du hade innan.
-      */
       password: newPass || session.password,
     };
 
