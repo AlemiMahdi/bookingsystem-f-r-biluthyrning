@@ -133,13 +133,45 @@ function bindAdminBookingActions(tableId, bookings) {
 
       if (!confirm('Ta bort denna bokning?')) return;
 
-      const id = deleteBtn.dataset.delBooking;
+      const id = Number(deleteBtn.dataset.delBooking);
+      const booking = bookings.find(b => Number(b.id) === id);
 
-      const res = await apiFetch(`/bookings/${id}`, {
+      if (!booking) return;
+
+      const hasOtherActiveBookingForSameCar = bookings.some(b =>
+        Number(b.id) !== id &&
+        Number(b.carId) === Number(booking.carId) &&
+        b.active === true
+      );
+
+      const shouldMakeCarAvailable =
+        booking.active === true && !hasOtherActiveBookingForSameCar;
+
+      const deleteRes = await apiFetch(`/bookings/${id}`, {
         method: 'DELETE',
       });
 
-      if (res.ok || res.status === 204) {
+      if (deleteRes.ok || deleteRes.status === 204) {
+        if (shouldMakeCarAvailable) {
+          try {
+            const carRes = await apiFetch(`/cars/${booking.carId}`);
+
+            if (carRes.ok) {
+              const car = await carRes.json();
+
+              await apiFetch(`/cars/${booking.carId}`, {
+                method: 'PUT',
+                body: JSON.stringify({
+                  ...car,
+                  booked: false,
+                }),
+              });
+            }
+          } catch (e) {
+            console.error('Kunde inte uppdatera bilens status:', e);
+          }
+        }
+
         renderAdminBookingsView();
       }
 
@@ -150,7 +182,7 @@ function bindAdminBookingActions(tableId, bookings) {
       e.preventDefault();
 
       const id = Number(editBtn.dataset.editBooking);
-      const booking = bookings.find(b => b.id === id);
+      const booking = bookings.find(b => Number(b.id) === id);
 
       if (booking) {
         renderEditBookingForm(booking);
@@ -220,14 +252,29 @@ function renderEditBookingForm(b) {
   document.getElementById('cancel-booking-btn').addEventListener('click', renderAdminBookingsView);
 
   document.getElementById('save-booking-btn').addEventListener('click', async () => {
+    const newActive = document.getElementById('eb-active').value === 'true';
+
     const body = {
       fromDate: document.getElementById('eb-from').value,
       toDate: document.getElementById('eb-to').value,
       userId: Number(document.getElementById('eb-uid').value),
       carId: Number(document.getElementById('eb-cid').value),
-      active: document.getElementById('eb-active').value === 'true',
+      active: newActive,
     };
 
+    if (b.active === true && newActive === false) {
+      const res = await apiFetch(`/bookings/return/${b.id}`, {
+        method: 'PUT',
+      });
+
+      if (res.ok) {
+        renderAdminBookingsView();
+      } else {
+        showError('eb-error', 'Kunde inte avsluta bokningen.');
+      }
+
+      return;
+    }
     const res = await apiFetch(`/bookings/${b.id}`, {
       method: 'PUT',
       body: JSON.stringify(body),
